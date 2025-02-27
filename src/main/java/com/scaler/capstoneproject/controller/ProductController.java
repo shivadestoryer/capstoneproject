@@ -26,22 +26,22 @@ public class ProductController {
     }
 
     @PutMapping(value="")
-    public ResponseEntity createOrUpdateProduct(@RequestBody ProductRequest productRequest )
+    public ResponseEntity createOrUpdateProduct(@RequestBody ProductRequest request )
     {
-
+        productService.createOrUpdateProduct(request);
         return ResponseEntity.accepted().build();
     }
 
     @PutMapping(value="/seller")
-    public ResponseEntity createOrUpdateProduct(@RequestBody SellerRequest productRequest ) {
-
+    public ResponseEntity createOrUpdateSeller(@RequestBody SellerRequest request ) {
+        productService.createOrUpdateSeller(request);
         return ResponseEntity.accepted().build();
     }
 
 
     @PutMapping(value="/category")
-    public ResponseEntity createOrUpdateProduct(@RequestBody CategoryRequest productRequest ) {
-
+    public ResponseEntity createOrUpdateCategory(@RequestBody CategoryRequest request ) {
+        productService.createOrUpdateCategory(request);
         return ResponseEntity.accepted().build();
     }
 
